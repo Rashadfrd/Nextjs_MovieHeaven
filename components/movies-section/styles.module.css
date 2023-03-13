@@ -1,0 +1,85 @@
+.moviesSection {
+  margin-top: 36px;
+}
+
+.title {
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  font-size: 24px;
+  letter-spacing: -1px;
+  width: 90%;
+}
+
+.moviesWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.movies {
+    display: flex;
+    gap: 33px;
+    width: 90%;
+    flex-wrap: wrap;
+}
+
+.movie {
+  width: 14.5%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+.movie:hover {
+  z-index: 9;
+  transform: scale(1.25);
+}
+
+@media only screen and (max-width: 1412px) {
+    .movie{
+        width: 17.5%;
+    }
+  }
+
+  @media only screen and (max-width: 1175px) {
+    .movie{
+        width: 22.2%;
+    }
+  }
+  @media only screen and (max-width: 984px) {
+    .movie{
+        width: 29%;
+    }
+    .movies{
+        gap: 50px;
+    }
+  }
+  @media only screen and (max-width: 860px) {
+    .movie{
+        width: 30%;
+    }
+    .movies{
+        gap: 30px;
+    }
+  }
+  @media only screen and (max-width: 670px) {
+    .movie{
+        width: 44%;
+    }
+    .movies{
+        gap: 60px;
+    }
+  }
+  @media only screen and (max-width: 556px) {
+    .movie{
+        width: 70%;
+        height: 400px;
+    }
+    .movies{
+        justify-content: center;
+        gap: 60px;
+    }
+  }
