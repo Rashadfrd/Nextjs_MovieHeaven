@@ -1,15 +1,18 @@
 import HomeContainer from "@/containers/home";
 import Movies from '../../mocks/movies.json'
 
-export default function Home({params}) {
+async function delay(ms) {
+    await new Promise(resolve => setTimeout(resolve, ms));
+  }
 
+async function Home({params}) {
+    await delay(2000)
     let selectedCategory;
 
     if (params.categories?.length > 0) {
         selectedCategory = true
     }
-
-
+    
   return (
     <main >
       <HomeContainer
@@ -23,3 +26,5 @@ export default function Home({params}) {
     </main>
   )
 }
+
+export default Home

@@ -7,10 +7,10 @@ const Header = () => {
   return (
     <header className={classes.header}>
       <div className={classes.headerWrapper}>
-        <div className={classes.logo}>
-            <TbCircleLetterM size={35} />
+        <Link href='/' className={classes.logo}>
+          <TbCircleLetterM size={35} />
           MOVIEHEAVEN
-        </div>
+        </Link>
         <nav className={classes.nav}>
           <Link href='/'>Test1</Link>
           <Link href='/'>Test2</Link>
