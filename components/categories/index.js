@@ -11,7 +11,7 @@ function Categories({ categories }) {
                 <Link
                 key={category.id}
                 className={styles.category}
-                href={``}
+                href={`/${category.id}`}
                 >
                 <div className={styles.name}>{category.name}</div>
                 </Link>

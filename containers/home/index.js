@@ -5,12 +5,16 @@ import Movies from '../../mocks/movies.json'
 import Genres from '../../mocks/genres.json'
 import MoviesSection from '@/components/movies-section/index.js'
 
-const HomeContainer = () => {
+const HomeContainer = ({category}) => {
+  console.log(category)
   const movie = Movies.results[0]
   return (
     <div>
       <Featured featuredMovie={movie} isCompact={true} />
       <Categories categories={Genres.genres.slice(0, 5)} />
+      
+      {category.movies.length > 0 && <MoviesSection movies={Movies.results.slice(0, 6)} title={Genres.genres.find(x=>x.id === +category.id).name} />}
+
       <MoviesSection movies={Movies.results.slice(0, 6)} title='Popular Films' />
       <MoviesSection movies={Movies.results.slice(0, 6)} title='Your Favourites' />
     </div>
