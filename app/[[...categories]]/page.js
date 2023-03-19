@@ -1,29 +1,8 @@
 import HomeContainer from "@/containers/home";
 import Movies from '../../mocks/movies.json'
+import { getPopular, getMoviesByGenre, getCategories, getTopRated } from "@/services/fetchservice";
 
-// Delay Function
 
-// async function delay(ms) {
-//     await new Promise(resolve => setTimeout(resolve, ms));
-//   }
-export const baseUrl = 'https://api.themoviedb.org/3'
-
-async function getMoviesByGenre(genreId){
-  const res = await fetch(`${baseUrl}/discover/movie/?api_key=${process.env.API_Key}&with_genres=${genreId}`)
-  return res.json()
-}
-async function getPopular(){
-  const res = await fetch(`${baseUrl}/movie/popular?api_key=${process.env.API_Key}&page=1`)
-  return res.json()
-}
-async function getTopRated(){
-  const res = await fetch(`${baseUrl}/movie/top_rated?api_key=${process.env.API_Key}&page=1`)
-  return res.json()
-}
-async function getCategories(){
-  const res = await fetch(`${baseUrl}/genre/movie/list?api_key=${process.env.API_Key}&language=en-US`)
-  return res.json()
-}
 async function Home({params}) {
 
   const popularPromise = getPopular()

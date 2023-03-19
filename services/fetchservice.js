@@ -1,11 +1,14 @@
 const baseUrl = 'https://api.themoviedb.org/3'
 
+
+//Delay function 
+
 async function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 async function fetchData(path, { query = "" } = {}) {
-  await delay(1000);
+  await delay(400);
 
   try {
     const res = await fetch(
