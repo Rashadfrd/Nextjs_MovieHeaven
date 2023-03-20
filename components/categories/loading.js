@@ -8,7 +8,7 @@ const CategoriesLoading = () => {
         <div className={styles.categories}>
             {
                 Array(5).fill(null).map((item,index)=>{
-                    return <div className={styles.category}><Skeleton key={index}/></div>
+                    return <div key={index} className={styles.category}><Skeleton /></div>
                 })
             }
       </div>
