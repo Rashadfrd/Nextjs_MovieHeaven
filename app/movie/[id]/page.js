@@ -7,7 +7,6 @@ import { getSingleMovie } from '@/services/fetchservice'
 
 async function SingleMovie ({params}) {
     const movie = await getSingleMovie(params.id)
-    console.log(movie)
   return (
     <div>
       <SingleMovieContainer movie={movie} />
