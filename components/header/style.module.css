@@ -24,3 +24,9 @@
     gap: 10px;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 500px) {
+    .nav{
+        display: none;
+    }
+}
