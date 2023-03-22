@@ -17,6 +17,7 @@ async function Home({params}) {
     if (params.categories?.length > 0) {
         selectedCategory = await getMoviesByGenre(params.categories[0])
     }
+
     
   return (
     <main >
