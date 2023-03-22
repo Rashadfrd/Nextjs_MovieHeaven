@@ -1,7 +1,6 @@
 import SingleMovieContainer from '@/containers/singlemovie'
-import Movies from '../../../mocks/movies.json'
+import Movies from '../../../../mocks/movies.json'
 import React from 'react'
-import { baseUrl } from '@/app/[[...categories]]/page'
 import { getSingleMovie } from '@/services/fetchservice'
 
 
