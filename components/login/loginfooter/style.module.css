@@ -1,0 +1,34 @@
+.NetflixLoginPageFooter {
+    background-color: rgba(0, 0, 0, .8);
+    color: #666;
+    padding: 40px;
+    text-align: center;
+    margin-top: 60px;
+  }
+  
+  .list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 20px;
+  }
+  
+  .item {
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  
+  .anchor {
+    color: #666;
+    text-decoration: none;
+  }
+  
+  .anchor:hover {
+    text-decoration: underline;
+  }
+  
+  .text {
+    margin-top: 20px;
+    font-size: 14px;
+  }

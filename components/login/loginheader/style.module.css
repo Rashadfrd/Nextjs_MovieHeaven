@@ -1,0 +1,20 @@
+.header{
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+}
+.headerWrapper{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+.logo{
+    font-weight: bold;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}

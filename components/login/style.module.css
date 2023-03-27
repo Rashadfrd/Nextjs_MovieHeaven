@@ -1,0 +1,81 @@
+.login{
+    background-image: url('../../assets/moviebg.jpg');
+    min-height: 100vh;
+}
+
+.loginContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    font-size: 35px;
+    height: 50px;
+}
+.line{
+    background-color: red;
+    height: 2px;
+    width: 130px;
+    transition: .3s;
+    transform: scaleX(0);
+}
+.titleAndLine:hover .line{
+    transform: scaleX(1);
+}
+
+.form{
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 60px 68px 40px;
+    width: 450px;
+    border-radius: 10px;
+    min-height: 640px;
+}
+
+.formItem{
+    margin: 15px 0;
+}
+
+.formItem > input{
+    border: none;
+    background-color: #333;
+    padding: 12px;
+    width: 100%;
+    border-radius: 5px;
+    color: #e7e7e7;
+    position: relative;
+}
+
+.formItem > input:focus{
+    outline: none;
+}
+
+.formItem > input:focus::placeholder{
+    position: absolute;
+    top: 5px;
+    transition: .4s;
+    font-size: 11px;
+}
+
+.submitBtn{
+    background-color: #E50914;
+    color: white;
+    border-radius: 10px;
+    width: 100%;
+    padding: 15px;
+    margin-top: 25px;
+    transition: .2s;
+}
+.submitBtn:hover{
+    background-color: #9b0008;
+}
+.moreBtn{
+    color: white;
+    font-size: 13px;
+    color: blue;
+    padding: 0;
+}
+
+.info{
+    margin-top: 50px;
+    color: #818080;
+}
