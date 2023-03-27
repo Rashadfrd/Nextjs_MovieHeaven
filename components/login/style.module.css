@@ -9,7 +9,7 @@
     align-items: center;
 }
 .title{
-    font-size: 35px;
+    font-size: 31px;
     height: 50px;
 }
 .line{
@@ -78,4 +78,15 @@
 .info{
     margin-top: 50px;
     color: #818080;
+}
+
+
+.inputError{
+    border: 2px solid #E50914 !important
+}
+
+.error{
+    color: #E50914;
+    font-size: 14px;
+    margin-top: 5px;
 }

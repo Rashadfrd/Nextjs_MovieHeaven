@@ -5,32 +5,39 @@ import LoginFooter from './loginfooter'
 import LoginHeader from './loginheader'
 import classes from './style.module.css'
 import { useFormik } from 'formik'
+import { loginSchema } from '@/schemas'
 
 function LoginPage() {
     const[visible,setVisible] = useState(false)
-    const formik = useFormik({
+    const {handleSubmit, values, errors, touched, handleChange, handleBlur} = useFormik({
         initialValues:{
             userName: '',
             password: ''
         },
-        onSubmit:(values)=>{
-            console.log(values)
+        validationSchema:loginSchema,
+        onSubmit:()=>{
+            console.log('submitted')
         }
     })
+
+    console.log(errors)
+
   return(
     <section className={classes.login}>
         <LoginHeader />
         <div className={classes.loginContent}>
-            <form className={classes.form} onSubmit={formik.handleSubmit}>
+            <form className={classes.form} onSubmit={handleSubmit} autoComplete='off'>
                 <div className={classes.titleAndLine}>
                     <h1 className={classes.title}>Sign In</h1>
                     <div className={classes.line}></div>
                 </div>
                 <div className={classes.formItem}>
-                    <input id='userName' type="text" placeholder='Username' onChange={formik.handleChange} value={formik.values.userName} />
+                    <input className={errors.userName && touched.userName ? classes.inputError : ``} id='userName' type="text" placeholder='Username' onChange={handleChange} onBlur={handleBlur} value={values.userName} />
+                    {errors.userName && touched.userName && <p className={classes.error}>{errors.userName}</p>}
                 </div>
                 <div className={classes.formItem}>
-                    <input id='password' type="password" placeholder='Password' onChange={formik.handleChange} value={formik.values.password} />
+                    <input className={errors.password && touched.password ? classes.inputError : ``} id='password' type="password" placeholder='Password' onChange={handleChange} onBlur={handleBlur} value={values.password} />
+                    {errors.password && touched.password && <p className={classes.error}>{errors.password}</p>}
                 </div>
                 <button className={classes.submitBtn} type='submit'> Sign In</button>
 
