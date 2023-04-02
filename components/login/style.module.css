@@ -68,6 +68,9 @@
 .submitBtn:hover{
     background-color: #9b0008;
 }
+.submitBtn:disabled{
+    opacity: .35;
+}
 .moreBtn{
     color: white;
     font-size: 13px;

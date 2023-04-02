@@ -6,21 +6,39 @@ import LoginHeader from './loginheader'
 import classes from './style.module.css'
 import { useFormik } from 'formik'
 import { loginSchema } from '@/schemas'
+import { signIn } from 'next-auth/react'
 
 function LoginPage() {
     const[visible,setVisible] = useState(false)
-    const {handleSubmit, values, errors, touched, handleChange, handleBlur} = useFormik({
+
+    //Delay function
+    async function delay(milliseconds) {
+        return new Promise(resolve => setTimeout(resolve, milliseconds));
+      }
+
+
+    const onSubmit = async (values, actions) => {
+        const result = await signIn('credentials',{
+            userName:values.userName,
+            password:values.password,
+            redirect:true,
+            callbackUrl:'/'
+        })
+    }
+
+    const handleGoogle = () => {
+        signIn('google',{callbackUrl:'http://localhost:3000'})
+    }
+
+    const {handleSubmit, values, errors, touched, isSubmitting, handleChange, handleBlur} = useFormik({
         initialValues:{
             userName: '',
             password: ''
         },
         validationSchema:loginSchema,
-        onSubmit:()=>{
-            console.log('submitted')
-        }
+        onSubmit
     })
 
-    console.log(errors)
 
   return(
     <section className={classes.login}>
@@ -39,7 +57,8 @@ function LoginPage() {
                     <input className={errors.password && touched.password ? classes.inputError : ``} id='password' type="password" placeholder='Password' onChange={handleChange} onBlur={handleBlur} value={values.password} />
                     {errors.password && touched.password && <p className={classes.error}>{errors.password}</p>}
                 </div>
-                <button className={classes.submitBtn} type='submit'> Sign In</button>
+                <button  disabled={isSubmitting} className={classes.submitBtn} type='submit'> Sign In</button>
+                <button onClick={handleGoogle}  className={classes.submitBtn} type='button'> Sign In With Google</button>
 
                 <div className={classes.info}>
                     <p>New to MovieHeaven? {<Link href='/' style={{color:'white'}}>Sign up now</Link>}.</p>
