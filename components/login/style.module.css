@@ -56,7 +56,7 @@
     font-size: 11px;
 }
 
-.submitBtn{
+.submitBtn, .googleBtn{
     background-color: #E50914;
     color: white;
     border-radius: 10px;
@@ -70,6 +70,15 @@
 }
 .submitBtn:disabled{
     opacity: .35;
+}
+
+.googleBtn{
+    background-color: white;
+    color: blue;
+    display: flex;
+    align-items: center;
+    gap:45px;
+    padding: 9px;
 }
 .moreBtn{
     color: white;

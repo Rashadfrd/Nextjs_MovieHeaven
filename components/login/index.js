@@ -1,12 +1,15 @@
 'use client'
 import Link from 'next/link'
 import React, { useState } from 'react'
+import Image from 'next/image'
+import GoogleImage from '../../assets/googleImg.png'
 import LoginFooter from './loginfooter'
 import LoginHeader from './loginheader'
 import classes from './style.module.css'
 import { useFormik } from 'formik'
 import { loginSchema } from '@/schemas'
 import { signIn } from 'next-auth/react'
+
 
 function LoginPage() {
     const[visible,setVisible] = useState(false)
@@ -18,12 +21,7 @@ function LoginPage() {
 
 
     const onSubmit = async (values, actions) => {
-        const result = await signIn('credentials',{
-            userName:values.userName,
-            password:values.password,
-            redirect:true,
-            callbackUrl:'/'
-        })
+        console.log(values)
     }
 
     const handleGoogle = () => {
@@ -58,7 +56,7 @@ function LoginPage() {
                     {errors.password && touched.password && <p className={classes.error}>{errors.password}</p>}
                 </div>
                 <button  disabled={isSubmitting} className={classes.submitBtn} type='submit'> Sign In</button>
-                <button onClick={handleGoogle}  className={classes.submitBtn} type='button'> Sign In With Google</button>
+                <button onClick={handleGoogle}  className={classes.googleBtn} type='button'> <Image width={40} height={40} src={GoogleImage} alt='googlelogo' /> Sign In With Google</button>
 
                 <div className={classes.info}>
                     <p>New to MovieHeaven? {<Link href='/' style={{color:'white'}}>Sign up now</Link>}.</p>
