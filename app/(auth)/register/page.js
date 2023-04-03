@@ -1,9 +1,10 @@
 import React from 'react'
+import RegisterPage from '@/components/register'
 
 function Register() {
   return (
     <div>
-      register
+      <RegisterPage />
     </div>
   )
 }

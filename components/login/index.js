@@ -39,8 +39,6 @@ function LoginPage() {
 
 
   return(
-    <section className={classes.login}>
-        <LoginHeader />
         <div className={classes.loginContent}>
             <form className={classes.form} onSubmit={handleSubmit} autoComplete='off'>
                 <div className={classes.titleAndLine}>
@@ -66,8 +64,6 @@ function LoginPage() {
                 </div>
             </form>
         </div>
-        <LoginFooter />
-    </section>
   )
 }
 
