@@ -1,5 +1,9 @@
 import NextAuth from "next-auth"
+import { connectMongo } from "@/database/conn";
+import Users from "@/schemas/mongo";
+import { compare } from "bcryptjs";
 import GoogleProvider from "next-auth/providers/google";
+import CredentialsProvider from "next-auth/providers/credentials";
 
 export const authOptions = {
   // Configure one or more authentication providers
@@ -8,8 +12,31 @@ export const authOptions = {
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET
+    }),
+    CredentialsProvider({
+      name:'Credentials',
+      async authorize(credentials, req){
+        connectMongo().catch(error => { error: "Connection Failed...!"})
+
+        // check user existance
+        const result = await Users.findOne( { username : credentials.userName})
+        if(!result){
+            throw new Error("No user Found with Email Please Sign Up...!")
+        }
+
+        // compare()
+        const checkPassword = await compare(credentials.password, result.password);
+        
+        // incorrect password
+        if(!checkPassword || result.username !== credentials.userName){
+            throw new Error("Username or Password doesn't match");
+        }
+
+        return result;
+
+      }
     })
-  ],
+],
   pages: {
     signIn: '/login',
   }

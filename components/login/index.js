@@ -3,8 +3,6 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import Image from 'next/image'
 import GoogleImage from '../../assets/googleImg.png'
-import LoginFooter from './loginfooter'
-import LoginHeader from './loginheader'
 import classes from './style.module.css'
 import { useFormik } from 'formik'
 import { loginSchema } from '@/schemas'
@@ -21,7 +19,12 @@ function LoginPage() {
 
 
     const onSubmit = async (values, actions) => {
-        console.log(values)
+        const status = await signIn('credentials',{
+            redirect:'false',
+            userName:values.userName,
+            password:values.password,
+            callbackUrl:'/'
+        })
     }
 
     const handleGoogle = () => {
