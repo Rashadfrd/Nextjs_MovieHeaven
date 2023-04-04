@@ -57,7 +57,7 @@ function LoginPage() {
                 <button onClick={handleGoogle}  className={classes.googleBtn} type='button'> <Image width={40} height={40} src={GoogleImage} alt='googlelogo' /> Sign In With Google</button>
 
                 <div className={classes.info}>
-                    <p>New to MovieHeaven? {<Link href='/' style={{color:'white'}}>Sign up now</Link>}.</p>
+                    <p>New to MovieHeaven? {<Link href='/register' style={{color:'white'}}>Sign up now</Link>}.</p>
                     {visible &&<p style={{fontSize:'13px'}}>This page is protected by Google reCAPTCHA to ensure you're not a bot. <br/>
                     The information collected by Google reCAPTCHA is subject to the Google Privacy Policy and Terms of Service, and is used for providing, maintaining, and improving the reCAPTCHA service and for general security purposes (it is not used for personalized advertising by Google).</p>}
                     <button type='button' className={classes.moreBtn} onClick={()=>{setVisible(!visible)}}>{visible ? 'show less' : 'learn more'}</button>

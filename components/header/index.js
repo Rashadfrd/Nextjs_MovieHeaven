@@ -1,5 +1,5 @@
 'use client'
-import {signIn, signOut, useSession } from 'next-auth/react'
+import {signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
 import React from 'react'
 import {TbCircleLetterM} from 'react-icons/tb'
@@ -22,9 +22,8 @@ const Header = () => {
           SignOut
           </span>
          </nav> :
-          // <button onClick={()=>{signIn()}}> SignIn </button>
           <nav className={classes.nav}>
-            <span style={{cursor:'pointer'}} onClick={()=>{signIn()}}>Login</span>
+            <Link href='/login'>Login</Link>
             <Link href='/register'>Register</Link>
           </nav>
         }
