@@ -11,8 +11,8 @@ export default async function handler(req, res){
         if (!req.body) {
             return res.status(404).json({error:'Dont have form data...!'})
         }
-        const {username, email, password} = req.body
-
+        const {userName, email, password} = req.body
+        
         //checking duplication of users
         const checkExisting = await Users.findOne({email})
         if (checkExisting) {
@@ -20,7 +20,7 @@ export default async function handler(req, res){
         }
 
         //hash password and create user
-        Users.create({username, email, password: await hash(password, 12)}).then((data)=>{
+        Users.create({userName, email, password: await hash(password, 12)}).then((data)=>{
             res.status(201).json({status:true, user:data})
         }).catch((err)=>{
             return res.status(404).json({err})

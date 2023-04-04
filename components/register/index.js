@@ -4,11 +4,24 @@ import Link from 'next/link'
 import classes from './style.module.css'
 import { useFormik } from 'formik'
 import { registerSchema } from '@/schemas'
+import { useRouter } from 'next/navigation'
 
 function RegisterPage() {
 
-    const onSubmit = (values, actions) => {
-        console.log(values)
+    const router = useRouter()
+
+    async function onSubmit (values, actions){
+        const options = {
+            method: "POST",
+            headers : { 'Content-Type': 'application/json'},
+            body: JSON.stringify(values)
+        }
+
+        await fetch('http://localhost:3000/api/auth/signup', options)
+            .then(res => res.json())
+            .then((data) => {
+                if(data) router.push('http://localhost:3000/login')
+            })
     }
 
     const {handleSubmit, handleChange, handleBlur, values, touched, errors, isSubmitting,} = useFormik({

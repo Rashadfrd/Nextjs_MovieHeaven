@@ -7,10 +7,12 @@ import classes from './style.module.css'
 import { useFormik } from 'formik'
 import { loginSchema } from '@/schemas'
 import { signIn } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 
 
 function LoginPage() {
     const[visible,setVisible] = useState(false)
+    const router = useRouter()
 
     //Delay function
     async function delay(milliseconds) {
@@ -25,6 +27,8 @@ function LoginPage() {
             password:values.password,
             callbackUrl:'/'
         })
+
+        if(status.ok) router.push(status.url)
     }
 
     const handleGoogle = () => {
