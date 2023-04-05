@@ -37,10 +37,10 @@ export const authOptions = {
       }
     })
 ],
-  secret:'Kt8oDfrGdPyCz9X9jLpC8bZt3lZm50O/wj0CwELFy0s=',
-  pages: {
-    signIn: '/login',
-  }
+pages: {
+  signIn: '/login',
+},
+  secret:process.env.NEXTAUTH_URL
 }
 
 export default NextAuth(authOptions)

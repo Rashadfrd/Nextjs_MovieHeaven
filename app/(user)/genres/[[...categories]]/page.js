@@ -1,5 +1,5 @@
 import HomeContainer from "@/containers/home";
-import Movies from '../../../mocks/movies.json'
+import Movies from '../../../../mocks/movies.json'
 import { getPopular, getMoviesByGenre, getCategories, getTopRated } from "@/services/fetchservice";
 
 
