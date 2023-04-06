@@ -25,14 +25,14 @@ function LoginPage() {
             redirect:'false',
             userName:values.userName,
             password:values.password,
-            callbackUrl:'/'
+            callbackUrl:'/genres'
         })
 
         if(status.ok) router.push(status.url)
     }
 
     const handleGoogle = () => {
-        signIn('google',{callbackUrl:'http://localhost:3000'})
+        signIn('google',{callbackUrl:'https://nextjs-movieheaven.vercel.app/genres'})
     }
 
     const {handleSubmit, values, errors, touched, isSubmitting, handleChange, handleBlur} = useFormik({
