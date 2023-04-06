@@ -1,10 +1,9 @@
+import LandingPage from '@/components/landingpage'
 import React from 'react'
 
 function Page() {
   return (
-    <div>
-      Hi
-    </div>
+    <LandingPage />
   )
 }
 

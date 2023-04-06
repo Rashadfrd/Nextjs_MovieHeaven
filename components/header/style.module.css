@@ -16,6 +16,18 @@
     align-items: center;
     gap: 20px;
 }
+
+.navItem{
+    background-color: rgb(246, 17, 17);
+    padding: 5px 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.navItem:hover{
+    background-color: rgb(192, 1, 1);
+}
+
 .logo{
     font-weight: bold;
     font-size: 26px;
@@ -26,7 +38,7 @@
 }
 
 @media only screen and (max-width: 500px) {
-    .nav{
-        display: none;
+    .logo{
+        font-size: 21px;
     }
 }

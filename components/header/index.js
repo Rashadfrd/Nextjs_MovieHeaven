@@ -11,19 +11,18 @@ const Header = () => {
     <header className={classes.header}>
       <div className={classes.headerWrapper}>
         <Link href='/' className={classes.logo}>
-          <TbCircleLetterM size={35} />
+          <TbCircleLetterM className={classes.logoM} size={35} />
           MOVIEHEAVEN
         </Link>
         {session?.user ?
          <nav className={classes.nav}>
           <span>{session.user.name || session.user.email}</span>
-          <span style={{cursor:'pointer'}} onClick={()=>{signOut()}}>
+          <span className={classes.navItem} style={{cursor:'pointer'}} onClick={()=>{signOut()}}>
           SignOut
           </span>
          </nav> : 
           <nav className={classes.nav}>
-            <Link href='/login'>Login</Link>
-            <Link href='/register'>Register</Link>
+            <Link className={classes.navItem} href='/login'>Sign In</Link>
           </nav>
         }
       </div>
