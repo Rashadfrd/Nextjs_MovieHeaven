@@ -11,6 +11,7 @@ export default async function handler(req, res){
         if (!req.body) {
             return res.status(404).json({error:'Dont have form data...!'})
         }
+        res.setHeader('Access-Control-Allow-Origin','https://nextjs-movieheaven.vercel.app')
         const {userName, email, password} = req.body
         
         //checking duplication of users
