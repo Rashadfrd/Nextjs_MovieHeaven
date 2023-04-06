@@ -37,8 +37,36 @@
     cursor: pointer;
 }
 
+@media only screen and (max-width: 605px) {
+    .navItem{
+        font-size: 14px;
+    }
+    .nav{
+        flex-direction: column;
+        gap: 5px;
+    }
+}
 @media only screen and (max-width: 500px) {
     .logo{
         font-size: 21px;
+    }
+}
+@media only screen and (max-width: 450px) {
+    .header{
+        margin-bottom: 40px;
+    }
+    .headerWrapper{
+        flex-direction: column;
+        padding: 10px 0;
+        height: auto;
+    }
+    .logo{
+        font-size: 32px;
+    }
+    .nav{
+        flex-direction: row;
+    }
+    .navItem{
+        padding: 3px 15px;
     }
 }
