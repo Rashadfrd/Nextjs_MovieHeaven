@@ -17,10 +17,10 @@ function RegisterPage() {
             body: JSON.stringify(values)
         }
 
-        await fetch('http://localhost:3000/api/auth/signup', options)
+        await fetch('https://nextjs-movieheaven.vercel.app/api/auth/signup', options)
             .then(res => res.json())
             .then((data) => {
-                if(data) router.push('http://localhost:3000/login')
+                if(data) router.push('https://nextjs-movieheaven.vercel.app/login')
             })
     }
 
