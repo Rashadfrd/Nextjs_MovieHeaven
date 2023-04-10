@@ -13,6 +13,13 @@
     width: 60%;
 }
 
+.formItem{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+}
+
 .formItem > input{
     width: 100%;
     border: none;
@@ -33,3 +40,30 @@
     font-size: 14px;
     top: 3px;
 }
+
+
+.searchList{
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 5px 0;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(137, 137, 137);
+    overflow: hidden;
+}
+
+.searchItem{
+    padding: 10px;
+    border-top: 1px solid rgb(137, 137, 137);
+    transition: .3s;
+}
+.searchItem:hover{
+    background-color: white;
+    color: black;
+}
+
+.searchBar::-webkit-search-decoration,
+.searchBar::-webkit-search-cancel-button,
+.searchBar::-webkit-search-results-button,
+.searchBar::-webkit-search-results-decoration { display: none; }
