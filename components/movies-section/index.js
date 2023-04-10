@@ -13,12 +13,15 @@ function MoviesSection({ title, movies }) {
             {movies.map((movie) => (
             <div className={classes.movie} key={movie.id}>
                 <Link href={`/movie/${movie.id}`}>
+                  <div style={{position:'relative', height:'100%'}}>
+
                 <Image
                     fill
                     unoptimized
                     alt={movie.title}
                     src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-                />
+                    />
+                    </div>
                 </Link>
             </div>
             ))}

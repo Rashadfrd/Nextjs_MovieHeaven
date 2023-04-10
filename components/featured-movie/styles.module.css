@@ -79,6 +79,17 @@
     z-index: -1;
   }
   
+  .moviePoster{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+  }
+
   .moviePoster img {
     height: auto !important;
     z-index: -2;

@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Header from '../header'
 import classes from './style.module.css'
 
-function LandingPage() {
+async function LandingPage() {
   return (
     <section className={classes.landingPage}>
       <Header />
